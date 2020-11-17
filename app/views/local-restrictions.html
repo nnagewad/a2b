@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Postcode checker travelling
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Coronavirus (COVID-19)</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} Find out the coronavirus restrictions in a local area {% endif %}
+      </h1>
+
+      <p>There are different restrictions in <a href="#">Scotland</a>, <a href="#">Wales</a> and <a href="#">Northern Ireland</a>.</p>
+
+      <p>Each area has a Local COVID Alert Level. There are 3 Local COVID Alert Levels. Sometimes these are called ‘tiers’ or known as a ‘local lockdown’.</p>
+
+      <p><a href="#">There are different rules to follow if you’re travelling to somewhere else in the UK</a></p>
+
+      <p>Enter the postcode of the place to find out what you can or cannot do.</p>
+    
+      
+    
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Find out what support you can get if you're affected by coronavirus
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                COVID-19: guidance for households with possible coronavirus infection
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Find out what coronavirus rules to follow when you’re travelling
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
