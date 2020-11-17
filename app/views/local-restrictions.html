@@ -38,7 +38,24 @@
 
       <p>Enter the postcode of the place to find out what you can or cannot do.</p>
     
-      
+      <form action="{{ actions.save }}" method="post" accept-charset="utf-8" novalidate>
+        {{ govukInput({
+          id: "search",
+          name: "search",
+          label: {
+            text: "Enter a full postcode",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "We use this to give you more accurate informtion about the area.",
+            text: "For example, LS1 1UR"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Find"
+        }) }}
+      </form>
     
     </div>
 
