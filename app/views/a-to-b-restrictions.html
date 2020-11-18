@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Postcode checker travelling
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Coronavirus (COVID-19)</a>
+      </li>
+    </ol>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  {%- if errors.length %}
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+        {{ govukErrorSummary({
+          titleText: "There is a problem",
+          errorList: errors
+        }) }}
+
+      </div>
+    </div>
+  {% endif -%}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} Coronavirus - travel from one area to another {% endif %}
+      </h1>
+
+      {{ govukInsetText({
+        html: 'There are different restrictions in <a class="govuk-link" href="https://www.gov.scot/coronavirus-covid-19/">Scotland</a>, <a class="govuk-link" href="https://gov.wales/local-lockdown">Wales</a> and <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-regulations-and-localised-restrictions">Northern Ireland</a>.'
+      }) }}
+
+      <p>Use this to find out the rules you need to follow when you’re travelling to somewhere else in England, for example if you're visiting a friend or relative or going shopping in another town.</p>
+
+      <p><a href="/local-restrictions">There’s a different service to find out what rules to follow where you’re living</a></p>
+
+      <p>When you’re in another place, and on the way there, the rules you need to follow depend on:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the Local COVID Alert Level where you’re living or spend most of your time</li>
+        <li>the level of the place you’re going to.</li>
+      </ul>
+
+      <p>When you’re returning from somewhere you’ve been, then you need to follow the rules for where you’re living.</p>
+
+      <p>You might not be allowed to travel to some areas unless you’re making an essential journey.</p>
+
+      <form class="location-form" action="{{ actions.save }}" method="post" accept-charset="utf-8" novalidate>
+        <h2 class="govuk-heading-l">Where you’re living</h2>
+        <p>This is the place where you spend most of your time.</p>
+        {{ govukInput({
+          id: "origin",
+          name: "origin",
+          label: {
+            text: "Enter a full postcode",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "For example, LS1 1UR"
+          }
+        }) }}
+
+        <h2 class="govuk-heading-l">Where you’re going to</h2>
+        {{ govukInput({
+          id: "destination",
+          name: "destination",
+          label: {
+            text: "Enter a full postcode",
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "For example, LS1 1UR"
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Find",
+          isStartButton: true
+        }) }}
+
+        <p class="govuk-body">
+          <a href="http://www.royalmail.com/find-a-postcode" class="govuk-link govuk-link--no-visited-state">
+            Find a postcode on Royal Mail's postcode finder
+          </a>
+        </p>
+      </form>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Find out what support you can get if you're affected by coronavirus
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                COVID-19: guidance for households with possible coronavirus infection
+              </a>
+            </li>
+            <li>
+              <a href="/local-restrictions">
+                Find out what coronavirus rules to follow where you’re living
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}
