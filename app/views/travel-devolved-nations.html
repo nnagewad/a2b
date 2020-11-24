@@ -1,0 +1,50 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Postcode checker travelling
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    }
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "#"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Find out the rules when you're travelling from the [DEVOLVED NATION] government</h1>
+
+      <p>The rules are different in <strong>[DEVOLVED NATION]</strong></p>
+
+      {% set html %}
+        <!-- Scottish government condition -->
+        <p><a href="https://www.gov.scot/coronavirus-covid-19/">Find out if you can travel and what the rules are from the Scottish government</a></p>
+
+        <!-- Welsh government condition -->
+        <!-- <p><a href="https://gov.wales/local-lockdown">Find out if you can travel and what the rules are from the Welsh government</a></p> -->
+
+        <!-- Northern Ireland government condition -->
+        <!-- <p><a href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-regulations-and-localised-restrictions">Find out if you can travel and what the rules are from the Northern Ireland government</a></p> -->
+      {% endset %}
+
+      {{ govukInsetText({
+        html: html
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
