@@ -10,11 +10,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Prototype"
-    }
-  }) }}
+  {% include "includes/prototype-phase-banner.html" %}
 
   {{ govukBackLink({
     text: "Back",
@@ -26,28 +22,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Current Tier: [#]</h1>
+      <!-- {% include "includes/local-copy/scotland.html" %} -->
 
-      <p>We've matched the search <strong>“[Postcode]”</strong> to <strong>[Place name]</strong>.</p>
+      <!-- {% include "includes/local-copy/wales.html" %} -->
 
-      {{ govukButton({
-        text: "Find out what the rules are"
-      }) }}
+      <!-- {% include "includes/local-copy/northern-ireland.html" %} -->
 
-      <h2 class="govuk-heading-l">Travelling between areas</h2>
+      {% include "includes/local-copy/tier1.html" %}
 
-      <p>When you’re visiting another place the rules you need to follow depend on the Local COVID Alert Level where you’re living and where you’re going to.</p>
+      <!-- {% include "includes/local-copy/tier2.html" %} -->
 
-      <p><a class="govuk-link" href="travel-restrictions.html">Find out what rules to follow if you’re travelling</a></p>
-
-      {% set html %}
-        <h2 class="govuk-notification-banner__heading">Find out when the rules change</h2>
-        <p><a class="govuk-link" href="#">Subscribe to email updates about changes to the rules for this journey</a></p>
-      {% endset %}
-
-      {{ govukNotificationBanner({
-        html: html
-      }) }}
+      <!-- {% include "includes/local-copy/tier3.html" %} -->
 
     </div>
   </div>

@@ -10,23 +10,9 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Prototype"
-    }
-  }) }}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "https://www.gov.uk"
-      },
-      {
-        text: "Coronavirus (COVID-19)",
-        href: "#"
-      }
-    ]
-  }) }}
+  {% include "includes/prototype-phase-banner.html" %}
+
+  {% include "includes/landing-page-breadcrumb.html" %}
 {% endblock %}
 
 {% block content %}
@@ -58,36 +44,15 @@
           }
         }) }}
 
-        {{ govukButton({
-          text: "Find"
-        }) }}
+        {% include "includes/find-button.html" %}
 
-        <p class="govuk-body">
-          <a href="http://www.royalmail.com/find-a-postcode" class="govuk-link govuk-link--no-visited-state">Find a postcode on Royal Mail's postcode finder</a>
-        </p>
+        {% include "includes/royal-mail-link.html" %}
       </form>
 
     </div>
 
     <div class="govuk-grid-column-one-third">
-
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">Related content</h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">Find out what support you can get if you're affected by coronavirus</a>
-            </li>
-            <li>
-              <a href="#">COVID-19: guidance for households with possible coronavirus infection</a>
-            </li>
-            <li>
-              <a href="/travel-restrictions">Find out what coronavirus rules to follow when you’re travelling</a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
-
+      {% include "includes/related-content.html" %}
     </div>
   </div>
 {% endblock %}

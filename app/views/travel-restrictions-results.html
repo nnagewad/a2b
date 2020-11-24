@@ -10,11 +10,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-  {{ govukPhaseBanner({
-    tag: {
-      text: "Prototype"
-    }
-  }) }}
+  {% include "includes/prototype-phase-banner.html" %}
 
   {{ govukBackLink({
     text: "Back",
@@ -45,21 +41,13 @@
       <!-- End - Apply some if/else magic -->
 
       {{ govukButton({
-        text: "Find out what the rules are"
+        text: "Find out what the rules are",
+        href: "#"
       }) }}
 
-      <h2 class="govuk-heading-l">Find information about travelling to somewhere else</h2>
+      {% include "includes/travel-somewhere-else.html" %}
 
-      <p><a class="govuk-link" href="travel-restrictions.html">Enter a different postcode</a></p>
-
-      {% set html %}
-        <h2 class="govuk-notification-banner__heading">Find out when the rules change</h2>
-        <p><a class="govuk-link" href="#">Subscribe to email updates about changes to the rules for this journey</a></p>
-      {% endset %}
-
-      {{ govukNotificationBanner({
-        html: html
-      }) }}
+      {% include "includes/notification-component.html" %}
 
     </div>
   </div>
