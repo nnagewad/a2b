@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Postcode checker travelling
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    }
+  }) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/travel-restrictions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Follow Tier [#] rules when you're at your destination</h1>
+
+      <p>You're travelling from <strong>[Place 1]</strong> to <strong>[Place 2]</strong>.</p>
+
+      <!-- Start - Apply some if/else magic -->
+        <!-- Travelling to same tier -->
+        <!-- <p><strong>[Place 2]</strong> is in the same Local COVID Alert Level to where you’re living.</p>
+        <p>This means that when you travel you need to follow the same rules as you normally do in <strong>[Place 1]</strong> which is in <strong>Tier [#]</strong>.</p> -->
+
+        <!-- Travelling to higher tier -->
+        <!-- <p><strong>[Place 2]</strong> is in a higher Local COVID Alert Level to where you’re living</p>
+        <p>This means that when you travel you need to follow the rules for <strong>[Place 2]</strong> which is in <strong>Tier [#]</strong>.</p> -->
+
+        <!-- Travelling to lower tier -->
+        <p><strong>[Place 2]</strong> is in a lower Local COVID Alert Level than where you’re living.</p>
+        <p>This means that when you travel you need to follow the rules for <strong>[Place 1]</strong> which is in <strong>Tier [#]</strong>.</p>
+      <!-- End - Apply some if/else magic -->
+
+      {{ govukButton({
+        text: "Find out what the rules are"
+      }) }}
+
+      <h2 class="govuk-heading-l">Find information about travelling to somewhere else</h2>
+
+      <p><a class="govuk-link" href="travel-restrictions.html">Enter a different postcode</a></p>
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+      {% set html %}
+        <h2 class="govuk-notification-banner__heading">Find out when the rules change</h2>
+        <p><a class="govuk-link" href="#">Subscribe to email updates about changes to the rules for this journey</a></p>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
