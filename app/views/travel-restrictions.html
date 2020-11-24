@@ -9,7 +9,13 @@
   {{ govukHeader() }}
 {% endblock %}
 
-{% block beforeContent %}
+{% block beforeContent %}  
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    }
+  }) }}
+
   {{ govukBreadcrumbs({
     items: [
       {
@@ -25,24 +31,10 @@
 {% endblock %}
 
 {% block content %}
-
-  {%- if errors.length %}
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-
-        {{ govukErrorSummary({
-          titleText: "There is a problem",
-          errorList: errors
-        }) }}
-
-      </div>
-    </div>
-  {% endif -%}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Coronavirus - travel from one area to another {% endif %}</h1>
+      <h1 class="govuk-heading-xl">Coronavirus - travel from one area to another</h1>
 
       {{ govukInsetText({
         html: 'There are different restrictions in <a class="govuk-link" href="https://www.gov.scot/coronavirus-covid-19/">Scotland</a>, <a class="govuk-link" href="https://gov.wales/local-lockdown">Wales</a> and <a class="govuk-link" href="https://www.nidirect.gov.uk/articles/coronavirus-covid-19-regulations-and-localised-restrictions">Northern Ireland</a>.'

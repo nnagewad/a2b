@@ -10,6 +10,12 @@
 {% endblock %}
 
 {% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    }
+  }) }}
+
   {{ govukBackLink({
     text: "Back",
     href: "/local-restrictions"
@@ -28,7 +34,7 @@
         text: "Find out what the rules are"
       }) }}
 
-      <h1 class="govuk-heading-l">Travelling between areas</h1>
+      <h2 class="govuk-heading-l">Travelling between areas</h2>
 
       <p>When you’re visiting another place the rules you need to follow depend on the Local COVID Alert Level where you’re living and where you’re going to.</p>
 
@@ -36,10 +42,8 @@
 
       {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
       {% set html %}
-        <p class="govuk-notification-banner__heading">
-          You have 7 days left to send your application.
-          <a class="govuk-notification-banner__link" href="#">View application</a>.
-        </p>
+        <h2 class="govuk-notification-banner__heading">Find out when the rules change</h2>
+        <p><a class="govuk-link" href="#">Subscribe to email updates about changes to the rules for this journey</a></p>
       {% endset %}
 
       {{ govukNotificationBanner({
