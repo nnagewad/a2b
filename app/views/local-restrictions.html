@@ -10,16 +10,18 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <div class="govuk-breadcrumbs">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="https://www.gov.uk">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item">
-        <a class="govuk-breadcrumbs__link" href="#">Coronavirus (COVID-19)</a>
-      </li>
-    </ol>
-  </div>
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "https://www.gov.uk"
+      },
+      {
+        text: "Coronavirus (COVID-19)",
+        href: "#"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}
