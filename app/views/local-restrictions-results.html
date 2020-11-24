@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Postcode checker travelling
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "/local-restrictions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Current Tier: [Tier number]</h1>
+
+      <p>We've matched the search <strong>“[Postcode]”</strong> to <strong>[Place name]</strong>.</p>
+
+      {{ govukButton({
+        text: "Find out what the rules are"
+      }) }}
+
+      <h1 class="govuk-heading-l">Travelling between areas</h1>
+
+      <p>When you’re visiting another place the rules you need to follow depend on the Local COVID Alert Level where you’re living and where you’re going to.</p>
+
+      <p><a class="govuk-link" href="travel-restrictions.html">Find out what rules to follow if you’re travelling</a></p>
+
+      <!-- {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          You have 7 days left to send your application.
+          <a class="govuk-notification-banner__link" href="#">View application</a>.
+        </p>
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html
+      }) }} -->
+
+    </div>
+  </div>
+{% endblock %}
