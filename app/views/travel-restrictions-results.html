@@ -22,32 +22,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Follow Tier [#] rules when you're at your destination</h1>
+      <!-- {% include "includes/travel-results/tiers/tier1/to-tier1.html" %}
 
-      <p>You're travelling from <strong>[Place 1]</strong> to <strong>[Place 2]</strong>.</p>
+      {% include "includes/travel-results/tiers/tier1/to-tier2.html" %}
 
-      <!-- Start - Apply some if/else magic -->
-        <!-- Travelling to same tier -->
-        <!-- <p><strong>[Place 2]</strong> is in the same Local COVID Alert Level to where you’re living.</p>
-        <p>This means that when you travel you need to follow the same rules as you normally do in <strong>[Place 1]</strong> which is in <strong>Tier [#]</strong>.</p> -->
+      {% include "includes/travel-results/tiers/tier1/to-tier3.html" %} -->
 
-        <!-- Travelling to higher tier -->
-        <!-- <p><strong>[Place 2]</strong> is in a higher Local COVID Alert Level to where you’re living</p>
-        <p>This means that when you travel you need to follow the rules for <strong>[Place 2]</strong> which is in <strong>Tier [#]</strong>.</p> -->
+      <!-- {% include "includes/travel-results/tiers/tier2/to-tier1.html" %} -->
 
-        <!-- Travelling to lower tier -->
-        <p><strong>[Place 2]</strong> is in a lower Local COVID Alert Level than where you’re living.</p>
-        <p>This means that when you travel you need to follow the rules for <strong>[Place 1]</strong> which is in <strong>Tier [#]</strong>.</p>
-      <!-- End - Apply some if/else magic -->
+      <!-- {% include "includes/travel-results/tiers/tier2/to-tier2.html" %} -->
 
-      {{ govukButton({
-        text: "Find out what the rules are",
-        href: "#"
-      }) }}
+      <!-- {% include "includes/travel-results/tiers/tier2/to-tier3.html" %} -->
 
-      {% include "includes/travel-somewhere-else.html" %}
+      <!-- {% include "includes/travel-results/tiers/tier3/to-tier1_or_to-tier2.html" %} -->
 
-      {% include "includes/notification-component.html" %}
+      {% include "includes/travel-results/tiers/tier3/to-tier3.html" %}
 
     </div>
   </div>
