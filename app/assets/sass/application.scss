@@ -15,38 +15,9 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/related-items";
 
 // Components that aren't in Frontend
-@import "components/action-link";
 @import "components/cookie-banner";
-@import "components/global-bar";
-@import "components/important-metadata";
-
-//Objects
-
-// Core
-@import "core/markdown";
-@import "core/title";
-
-// Utilities
-@import "utilities/overwrite";
+@import "components/covid";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
-
-.app-call-to-action {
-    margin: 2em 0;
-    background-color: govuk-colour("light-grey", $legacy: "grey-3");
-    padding: 2em;
-
-    &:first-child {
-        margin-top: 0;
-    }
-
-    p:last-child,
-    ul:last-child,
-    ol:last-child {
-        margin-bottom: 0;
-    }
-}
-
-.app-font-colour--white {
-    color: govuk-colour('white');
-}
+@import "https://www.gov.uk/assets/static/core-layout-149d9ef2aa91bca683dc86b01cfed92cf9ceeee030831296358ed58bb645ae05.css";
+@import "https://www.gov.uk/assets/collections/application-ba95a756e79638565d9d13a39744619bd39e9ed3dd59d59dbff84adc18982886.css"

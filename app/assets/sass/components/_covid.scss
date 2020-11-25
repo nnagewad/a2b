@@ -1,0 +1,18 @@
+.covid__page-header--landing-page {
+    h2 {
+        color: white;
+    }
+}
+
+.covid__find-help {
+    h2, p {
+        color: white;
+    }
+}
+
+.coronavirus-govuk-header {
+    border-bottom: 0;
+    .govuk-header__container {
+        border-bottom-color: transparent;
+    }
+}
