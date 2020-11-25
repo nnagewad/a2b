@@ -31,10 +31,10 @@
 
       <p>Enter your postcode to find out what the rules are where you’re living or spend most of your time.</p>
     
-      <form action="{{ actions.save }}" method="post" accept-charset="utf-8" novalidate>
+      <form action="/local-restrictions-results" method="post" accept-charset="utf-8" novalidate>
         {{ govukInput({
           id: "search",
-          name: "search",
+          name: "local-postcode",
           label: {
             text: "Enter a full postcode",
             classes: "govuk-label--s"

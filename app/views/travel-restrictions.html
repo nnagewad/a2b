@@ -39,12 +39,12 @@
 
       <p>You might not be allowed to visit some areas unless you’re making an essential journey.</p>
 
-      <form class="location-form" action="{{ actions.save }}" method="post" accept-charset="utf-8" novalidate>
+      <form class="location-form" action="/travel-restrictions-results" method="post" accept-charset="utf-8" novalidate>
         <h2 class="govuk-heading-l">Where you’re living</h2>
         <p>This is the place where you spend most of your time.</p>
         {{ govukInput({
           id: "origin",
-          name: "origin",
+          name: "origin-postcode",
           label: {
             text: "Enter a full postcode",
             classes: "govuk-label--s"
@@ -57,7 +57,7 @@
         <h2 class="govuk-heading-l">Where you’re going to</h2>
         {{ govukInput({
           id: "destination",
-          name: "destination",
+          name: "destination-postcode",
           label: {
             text: "Enter a full postcode",
             classes: "govuk-label--s"
