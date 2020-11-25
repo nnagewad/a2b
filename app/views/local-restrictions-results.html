@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Postcode checker travelling
+  Local restrictions results
 {% endblock %}
 
 {% block header %}
@@ -22,13 +22,13 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <!-- {% include "includes/local-results/devolved-nations/northern-ireland.html" %} -->
+      <!-- {% include "includes/devolved-nations/northern-ireland.html" %} -->
       
-      <!-- {% include "includes/local-results/devolved-nations/scotland.html" %} -->
+      <!-- {% include "includes/devolved-nations/scotland.html" %} -->
 
-      <!-- {% include "includes/local-results/devolved-nations/wales.html" %} -->
+      {% include "includes/devolved-nations/wales.html" %}
       
-      {% include "includes/local-results/tiers/tier1.html" %}
+      <!-- {% include "includes/local-results/tiers/tier1.html" %} -->
 
       <!-- {% include "includes/local-results/tiers/tier2.html" %} -->
 

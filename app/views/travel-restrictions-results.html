@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Postcode checker travelling
+  Travel restrictions results
 {% endblock %}
 
 {% block header %}
@@ -22,6 +22,12 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <!-- {% include "includes/devolved-nations/northern-ireland.html" %} -->
+      
+      <!-- {% include "includes/devolved-nations/scotland.html" %} -->
+
+      {% include "includes/devolved-nations/wales.html" %}
+
       <!-- {% include "includes/travel-results/tiers/tier1/to-tier1.html" %}
 
       {% include "includes/travel-results/tiers/tier1/to-tier2.html" %}
@@ -36,7 +42,7 @@
 
       <!-- {% include "includes/travel-results/tiers/tier3/to-tier1_or_to-tier2.html" %} -->
 
-      {% include "includes/travel-results/tiers/tier3/to-tier3.html" %}
+      <!-- {% include "includes/travel-results/tiers/tier3/to-tier3.html" %} -->
 
     </div>
   </div>
