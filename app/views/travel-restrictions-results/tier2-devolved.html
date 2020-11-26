@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Travel restrictions results
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/prototype-phase-banner.html" %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/travel-restrictions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">Find out the rules from the Welsh government</h1>
+
+      <p>The rules are different in <strong>Wales</strong></p>
+
+      {{ govukButton({
+          text: "Find out what the rules are in Wales",
+          href: "https://gov.wales/local-lockdown/"
+      }) }}
+    </div>
+  </div>
+{% endblock %}
