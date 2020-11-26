@@ -3,10 +3,15 @@ const router = express.Router()
 
 // Postcode for devolved nations
 const walesPostCode = 'n12 8by';
+const scotlandPostCode = 'l5a 1t1';
 
 // Postcodes
 const homePostCode = 'l5h 1e5';
 const friendPostCode = 'm5h 2t2';
+
+// Results page
+const walesResults = '/wales';
+const scotlandResults = '/scotland';
 
 
 // Local restrictions
@@ -17,10 +22,15 @@ router.post('/local-restrictions-results', function (req, res) {
 
   const localPostcode = req.session.data['local-postcode'];
 
+  const localResults = '/local-results';
+
   const wales = postCodeFormater(localPostcode, walesPostCode);
+  const scotland = postCodeFormater(localPostcode, scotlandPostCode);
 
   if (wales) {
-    res.redirect('/wales')
+    res.redirect(localResults + walesResults)
+  } else if (scotland) {
+    res.redirect(localResults + scotlandResults)
   } else {
     res.redirect('/local-restrictions-results')
   }
@@ -36,10 +46,12 @@ router.post('/travel-restrictions-results', function (req, res) {
   const originPostcode = req.session.data['origin-postcode'];
   const destinationPostcode = req.session.data['destination-postcode'];
 
-  const origin = postCodeFormater(originPostcode, homePostCode);
-  const destination = postCodeFormater(destinationPostcode, friendPostCode);
+  const travelResults = '/travel-results';
 
-  if (origin && destination) {
+  const home = postCodeFormater(originPostcode, homePostCode);
+  const friend = postCodeFormater(destinationPostcode, friendPostCode);
+
+  if (home && friend) {
     res.redirect('/local-restrictions-results')
   } else {
     res.redirect('/wales')
