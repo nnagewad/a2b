@@ -12,7 +12,7 @@ router.post('/local-restrictions-results', function (req, res) {
   
     const localPostcode = req.session.data['local-postcode'];
 
-    const wales = localPostcode === walesPostCode || localPostcode === walesPostCode.toUpperCase() || localPostcode === walesPostCode.replace(/\s/g,'') || localPostcode === walesPostCode.toUpperCase().replace(/\s/g,'')
+    const wales = postCodeFormater(localPostcode, walesPostCode);
 
     if (wales) {
       res.redirect('/wales')
@@ -22,3 +22,8 @@ router.post('/local-restrictions-results', function (req, res) {
   })
 
 module.exports = router
+
+
+function postCodeFormater(inputField, postCode) {
+  return inputField === postCode || inputField === postCode.toUpperCase() || inputField === postCode.replace(/\s/g,'') || inputField === postCode.toUpperCase().replace(/\s/g,'')
+}
