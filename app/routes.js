@@ -19,7 +19,7 @@ const error = '/error';
 router.post('/local-restrictions-results', function (req, res) {
   const localPostcode = req.session.data['local-postcode'];
 
-  const localResults = '/local-results';
+  const localResults = '/local-restrictions-results';
 
   const cornwallLocal = postCodeFormater(localPostcode, cornwallPostcode);
   const readingLocal = postCodeFormater(localPostcode, readingPostcode);
