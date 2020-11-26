@@ -21,9 +21,15 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Current Tier: 3</h1>
 
-      {% include "../includes/devolved-nations/wales.html" %}
-
+        <p>We've matched the search <strong>"BS1 5TR"</strong> to <strong>Bristol City Council</strong>.</p>
+        
+        {% include "../includes/restriction-button/tier3.html" %}
+        
+        {% include "../includes/travel-between-areas.html" %}
+        
+        {% include "../includes/notification-component.html" %}
     </div>
   </div>
 {% endblock %}

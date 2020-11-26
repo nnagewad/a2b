@@ -21,9 +21,15 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Current Tier: 1</h1>
 
-      {% include "../includes/devolved-nations/scotland.html" %}
+        <p>We've matched the search <strong>"TR7 1AF"</strong> to <strong>Cornwall Council</strong>.</p>
 
+        {% include "../includes/restriction-button/tier1.html" %}
+
+        {% include "../includes/travel-between-areas.html" %}
+
+        {% include "../includes/notification-component.html" %}
     </div>
   </div>
 {% endblock %}

@@ -21,9 +21,15 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Current Tier: 2</h1>
 
-      <h1>It's broke fool!</h1>
+        <p>We've matched the search <strong>"RG1 2LU"</strong> to <strong>Reading Borough Council</strong>.</p>
 
+        {% include "../includes/restriction-button/tier2.html" %}
+
+        {% include "../includes/travel-between-areas.html" %}
+
+        {% include "../includes/notification-component.html" %}
     </div>
   </div>
 {% endblock %}
