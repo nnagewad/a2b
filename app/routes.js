@@ -1,17 +1,20 @@
 const express = require('express')
 const router = express.Router()
 
-// Add your routes here - above the module.exports line
+// Variables for devolved nations
+const walesPostCode = 'n12 8by';
 
-// Branching
+// Local restrictions
 router.post('/local-restrictions-results', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
     // However in JavaScript we can't use hyphens in variable names
   
-    const localPostcode = req.session.data['local-postcode']
-  
-    if (localPostcode === 'wales' || localPostcode === 'Wales') {
+    const localPostcode = req.session.data['local-postcode'];
+
+    const wales = localPostcode === walesPostCode || localPostcode === walesPostCode.toUpperCase() || localPostcode === walesPostCode.replace(/\s/g,'') || localPostcode === walesPostCode.toUpperCase().replace(/\s/g,'')
+
+    if (wales) {
       res.redirect('/wales')
     } else {
       res.redirect('/local-restrictions-results')
