@@ -12,6 +12,7 @@ const tier1 = '/tier1';
 const tier2 = '/tier2';
 const tier3 = '/tier3';
 const devolved = '/devolved';
+const error = '/error';
 
 
 // Local restrictions
@@ -31,7 +32,7 @@ router.post('/local-restrictions-results', function (req, res) {
   } else if (bristolLocal) {
     res.redirect(localResults + tier3)
   } else {
-    res.redirect('/local-restrictions-results')
+    res.redirect(localResults + error)
   }
 })
 
