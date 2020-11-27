@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Postcode checker
+  Postcode checker: find out the rules in your local area
 {% endblock %}
 
 {% block header %}
@@ -22,11 +22,11 @@
 
       {% include "includes/different-restrictions.html" %}
 
-      <p>There are 3 levels of restrictions, called Tiers. There are different rules to follow based on what Tier an area is in.</p>
+      <p>There are 3 tiers. There are different rules depending on what Tier an area is in.</p>
 
-      <p><a class="govuk-link govuk-link--no-visited-state" href="/travel-restrictions">There are different rules if you’re travelling to somewhere else in England, for example if you’re visiting someone</a></p>
+      <p>Enter the postcode where you're living or spend most of your time to find out what the rules are.</p>
 
-      <p>Enter your postcode to find out what the rules are where you’re living or spend most of your time.</p>
+      <p><a class="govuk-link govuk-link--no-visited-state" href="/travel-restrictions">There are different rules if you’re travelling to somewhere else in England, for example if you’re visiting someone.</a></p>
     
       <form action="/local-restrictions-results" method="post" accept-charset="utf-8" novalidate>
         {{ govukInput({

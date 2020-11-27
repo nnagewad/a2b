@@ -22,23 +22,21 @@
 
       {% include "includes/different-restrictions.html" %}
 
-      <p>Use this to find out the rules you need to follow when you’re visiting somewhere else in England, for example if you're visiting a friend or relative or going shopping in another town. <a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/government/publications/higher-education-reopening-buildings-and-campuses/student-movement-and-plans-for-the-end-of-autumn-2020-term">If you’re a student returning home from university there are different rules.</a></p>
-
-      <p><a class="govuk-link govuk-link--no-visited-state" href="/local-restrictions">There’s a different service to find out what rules to follow where you’re living</a></p>
+      <p>Use this to find out the rules you need to follow when you're visiting somewhere else iin England, for example if you're visiting a friend or relative or going shopping in another town.</p>
 
       <p>When you’re in another place, and on the way there, the rules you need to follow depend on:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>the Local COVID Alert Level where you’re living or spend most of your time</li>
+        <li>the tier of the area where you're living or spend most your time.</li>
         <li>the level of the place you’re going to.</li>
       </ul>
 
-      <p>When you’re returning from somewhere you’ve been, then you need to <a class="govuk-link govuk-link--no-visited-state" href="/local-restrictions">follow the rules for where you’re living</a>.</p>
+      <p>When you’re returning from somewhere you’ve been, then you need to <a class="govuk-link govuk-link--no-visited-state" href="/local-restrictions">follow the rules for where you’re living.</a></p>
 
       <p>You might not be allowed to visit some areas unless you’re making an essential journey.</p>
 
       <form class="location-form" action="/travel-restrictions-results" method="post" accept-charset="utf-8" novalidate>
         <h2 class="govuk-heading-l">Where you’re living</h2>
-        <p>This is the place where you spend most of your time.</p>
+        <p>Where you spend most of your time.</p>
         {{ govukInput({
           id: "origin",
           name: "origin-postcode",
