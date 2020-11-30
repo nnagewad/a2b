@@ -1,1 +1,35 @@
-<h1>Hounslow</h1>
+
+{% extends "layout.html" %}
+{% block pageTitle %}
+  Postcode checker results: Tier 2
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/prototype-phase-banner.html" %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/local-restrictions"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Current Tier: 2</h1>
+
+        <p>We've matched the search <strong>"TW3 3EB"</strong> to <strong>London Borough of Hounslow</strong>.</p>
+
+        {% include "../../includes/restriction-button/tier2.html" %}
+
+        {% include "../../includes/travel-between-areas.html" %}
+
+        {% include "../../includes/notification-component.html" %}
+    </div>
+  </div>
+{% endblock %}
