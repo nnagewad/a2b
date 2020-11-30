@@ -125,6 +125,9 @@ router.post('/travel-restrictions-results', function (req, res) {
   const southwarkEnd = postCodeFormater(destinationPostcode, southwarkPostcode);
 
 
+  // Devolved nation pages
+  const wales = '/wales';
+
   // The router logic for travel restrictions
   if (readingStart && bristolEnd) {
     res.redirect(travelResults + tier2ToTier3)
@@ -153,15 +156,15 @@ router.post('/travel-restrictions-results', function (req, res) {
   } else if (southwarkStart && cornwallEnd) {
     res.redirect(task3 + participant5)
   } else if (warringtonStart && walesEnd) {
-    res.redirect(task4 + participant1)
+    res.redirect(task4 + wales)
   } else if (buryStart && walesEnd) {
-    res.redirect(task4 + participant2)
+    res.redirect(task4 + wales)
   } else if (hounslowStart && walesEnd) {
-    res.redirect(task4 + participant3)
+    res.redirect(task4 + wales)
   } else if (birminghamStart && walesEnd) {
-    res.redirect(task4 + participant4)
+    res.redirect(task4 + wales)
   } else if (southwarkStart && walesEnd) {
-    res.redirect(task4 + participant5)
+    res.redirect(task4 + wales)
   } else {
     res.redirect(travelResults + error)
   }
