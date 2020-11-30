@@ -6,6 +6,11 @@ const cornwallPostcode = 'tr7 1af';
 const readingPostcode = 'rg1 2lu';
 const bristolPostcode = 'bs1 5tr';
 const walesPostcode = 'cf11 0ba';
+const warringtonPostcode = 'wa1 9ss';
+const buryPostcode = 'bl9 0sw';
+const hounslowPostcode = 'tw3 3eb';
+const briminghamPostcode = 'b1 1bb';
+const southwarkPostcode = 'se1 2qh';
 
 // Reusable templates
 const devolved = '/devolved';
@@ -35,12 +40,14 @@ router.post('/local-restrictions-results', function (req, res) {
   }
 })
 
+
 // travel restrictions
 router.post('/travel-restrictions-results', function (req, res) {
   
   const originPostcode = req.session.data['origin-postcode'];
   const destinationPostcode = req.session.data['destination-postcode'];
 
+  // Testing out the router
   const travelResults = '/travel-restrictions-results';
   const tier2ToTier3 = '/tier2-tier3';
   const tier2ToTier1 = '/tier2-tier1';
@@ -56,6 +63,10 @@ router.post('/travel-restrictions-results', function (req, res) {
   const readingEnd = postCodeFormater(destinationPostcode, readingPostcode);
   const bristolEnd = postCodeFormater(destinationPostcode, bristolPostcode);
   const walesEnd = postCodeFormater(destinationPostcode, walesPostcode);
+
+  // What to use during user research session
+
+
 
   if (readingStart && bristolEnd) {
     res.redirect(travelResults + tier2ToTier3)
