@@ -20,6 +20,7 @@ const error = '/error';
 router.post('/local-restrictions-results', function (req, res) {
   const localPostcode = req.session.data['local-postcode'];
 
+  // Fallback postcodes + paths
   const localResults = '/local-restrictions-results';
   const tier1 = '/tier1';
   const tier2 = '/tier2';
@@ -29,12 +30,38 @@ router.post('/local-restrictions-results', function (req, res) {
   const readingLocal = postCodeFormater(localPostcode, readingPostcode);
   const bristolLocal = postCodeFormater(localPostcode, bristolPostcode);
 
+
+  // UR postcodes + paths
+  const task2 = '/research-tasks/task2';
+  const participant1 = '/participant1';
+  const participant2 = '/participant2';
+  const participant3 = '/participant3';
+  const participant4 = '/participant4';
+  const participant5 = '/participant5';
+
+  const warringtonLocal = postCodeFormater(localPostcode, warringtonPostcode);
+  const buryLocal = postCodeFormater(localPostcode, buryPostcode);
+  const hounslowLocal = postCodeFormater(localPostcode, hounslowPostcode);
+  const briminghamLocal = postCodeFormater(localPostcode, briminghamPostcode);
+  const southwarkLocal = postCodeFormater(localPostcode, southwarkPostcode);
+
+
   if (cornwallLocal) {
     res.redirect(localResults + tier1)
   } else if (readingLocal) {
     res.redirect(localResults + tier2)
   } else if (bristolLocal) {
     res.redirect(localResults + tier3)
+  } else if(warringtonLocal) {
+    res.redirect(task2 + participant1)
+  } else if (buryLocal) {
+    res.redirect(task2 + participant2)
+  } else if (hounslowLocal) {
+    res.redirect(task2 + participant3)
+  } else if (briminghamLocal) {
+    res.redirect(task2 + participant4)
+  } else if (southwarkLocal) {
+    res.redirect(task2 + participant5)
   } else {
     res.redirect(localResults + error)
   }
