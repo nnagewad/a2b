@@ -148,8 +148,6 @@ router.post('/travel-restrictions-results', function (req, res) {
     res.redirect(task1 + participant5)
   } else if (warringtonStart && cornwallEnd) {
     res.redirect(task3 + participant1)
-  } else if (readingStart && cornwallEnd) {
-    res.redirect(task3 + participant2)
   } else if (hounslowStart && cornwallEnd) {
     res.redirect(task3 + participant3)
   } else if (southwarkStart && cornwallEnd) {
